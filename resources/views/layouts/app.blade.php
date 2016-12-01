@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <script type="text/javascript" src="{{ asset('ShowPasswordCheckbox.js')}}"></script>
 
     <style>
         body {
@@ -63,8 +64,8 @@
                             Master <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/users') }}">User</a></li>
-                            <li><a href="">Warehouse</a></li>
+                            <li><a href="{{ url('/users') }}">Users</a></li>
+                            <li><a href="{{ url('/applications') }}">Applications</a></li>
                         </ul>
                     </li>
                     @endif
@@ -76,9 +77,8 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}">
-                                <i class="fa fa-btn fa-sign-out"></i>Logout</a>
-                            </li>
+                            <li><a href="{{ route('password', Auth::user()->id) }}"><i class="fa fa-btn fa-key fa-fw"></i>Change Password</a></li>
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
                 </ul>
