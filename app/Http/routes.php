@@ -76,5 +76,27 @@ Route::group(['middleware' => ['web','auth','admin']], function(){
 		'as'	=>	'deleteApp',
 		'uses'	=>	'ApplicationController@destroy'
 	]);
+	// Route::resource('AdUnit','AdUnitController');
+	Route::get('AdUnits','AdUnitController@index');
+	Route::get('AdUnits/create', [ 
+		'as'	=>	'createUnit',
+		'uses'	=>	'AdUnitController@create'
+	]);
+	Route::post('AdUnits/store', [
+		'as'	=>	'storeUnit',
+		'uses'	=>	'AdUnitController@store'
+	]);
+	Route::get('AdUnits/{id}/edit', [
+		'as'	=>	'editUnit',
+		'uses'	=>	'AdUnitController@edit'
+	]);
+	Route::post('AdUnits/{id}', [
+		'as'	=>	'updateUnit',
+		'uses'	=>	'AdUnitController@update'
+	]);
+	Route::delete('AdUnits/{id}', [
+		'as'	=>	'deleteUnit',
+		'uses'	=>	'AdUnitController@destroy'
+	]);
 });
 

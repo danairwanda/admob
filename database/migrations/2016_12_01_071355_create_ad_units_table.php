@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateApplicationsTable extends Migration
+class CreateAdUnitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,12 @@ class CreateApplicationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('applications', function (Blueprint $table) {
+        Schema::create('ad_units', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('app_id');
+            $table->string('adUnit_id');
             $table->string('name');
+            $table->integer('fk_app')->unsigned();
+            $table->foreign('fk_app')->references('id')->on('applications');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateApplicationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('applications');
+        Schema::drop('ad_units');
     }
 }
