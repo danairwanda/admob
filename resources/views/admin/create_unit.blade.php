@@ -9,11 +9,22 @@
 				<div class="panel-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ route('storeUnit') }}">
 						{{ csrf_field() }}
+						<div class="form-group">
+							<label for="fk_app" class="col-md-4 control-label">Application ID</label>
+							<div class="col-md-6">
+								<select name="fk_app" class="form-control">
+									<option>-- Choose Application ID -- </option>
+								    @foreach($all as $appid)
+								     <option value="{{ $appid->id }}">{{ $appid->app_id}}</option>
+								    @endforeach
+								</select>
+							</div>
+						</div>
 						{{-- input adunit ID --}}
 						<div class="form-group">
-							<label for="AdUnit_id" class="col-md-4 control-label">AdUnit ID</label>
+							<label for="adUnit_id" class="col-md-4 control-label">AdUnit ID</label>
 								<div class="col-md-6">
-									<input type="text" id="AdUnit_id" class="form-control" name="AdUnit_id">
+									<input type="text" id="adUnit_id" class="form-control" name="adUnit_id">
 								</div>
 						</div>
 						{{-- input adunit name --}}
@@ -24,17 +35,6 @@
 							</div>
 						</div>
 						{{-- dropdown application ID --}}
-						<div class="form-group">
-							<label for="fk_app" class="col-md-4 control-label">Application ID</label>
-							<div class="col-md-6">
-								<select name="fk_app" class="form-control">
-									<option>-- Choose Application ID -- </option>
-								    @foreach($adUnits as $adunit)
-								     <option value="{{ $adunit->fk_app }}">{{ $adunit->fk_app}}</option>
-								    @endforeach
-								</select>
-							</div>
-						</div>
 						{{-- submit save --}}
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">

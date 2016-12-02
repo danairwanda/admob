@@ -9,7 +9,7 @@ class AdUnit extends Model{
     protected $fillable = ['adUnit_id','name','fk_app'];
     
     public function application(){
-		return $this->belongsTo('App\Application');
+		return $this->belongsTo('App\Application','id');
 	}
 }
 
