@@ -98,5 +98,7 @@ Route::group(['middleware' => ['web','auth','admin']], function(){
 		'as'	=>	'deleteUnit',
 		'uses'	=>	'AdUnitController@destroy'
 	]);
+	// Project Route..
+	Route::get('projects','ProjectController@index');
 });
 

@@ -13,9 +13,10 @@ class AdUnitController extends Controller{
     public function index(Request $request){
         /* menampilkan seluruh data AdUnit dengan urutan z-a beserta paginasi sebanyak 5 */
         $adUnits = AdUnit::orderBy('id','ASC')
-                    ->application()
+                    ->with('application')
+                    // ->get();
                     ->paginate(5);
-        // dd($adUnits);
+        // dd($adUnits->toArray());
           // $adUnits = AdUnit::with('Application')->first();
           /* menampilkan view AdUnit di folder admin dengan membawa semua data yang diterjemahkan dalam compact dengan urutan nomor secara otomatis */
         return view::make('admin.adUnits', compact('adUnits'))->with('i', ($request->input('page', 1) - 1) * 5);

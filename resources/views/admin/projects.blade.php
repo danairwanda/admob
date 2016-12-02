@@ -6,31 +6,31 @@
 				{{ Session::get('message') }}
 				<div class="panel panel-default">
 					<div class="panel-heading"><strong>Admin AdUnit</strong>
-						<a href="{{ route('createUnit') }}" name="btn_add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Add</a><br><br>
+						<a href="" name="btn_add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Add</a><br><br>
 					</div>
 						<div class="panel-body">
 						<table class="table table-striped table-hover">
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>AdUnit ID</th>
-									<th>Name</th>
-									<th>Application ID</th>
-									<th>Action</th>
+									<th>Username </th>
+									<th>AdUnit Name</th>
+									<th>Share</th>
 								</tr>
 							</thead>
 							<tbody>
-							@foreach($adUnits as $adUnit)
+							@foreach($projects as $project)
 								<tr>
 									<td>{{ ++$i }}</td>
-									<td>{{ $adUnit->adUnit_id }}</td>
-									<td>{{ $adUnit->name }}</td>
-									<td>{{ $adUnit->application->name }}</td>
+									<td>{{ $project->user->name }}</td>
+									<td>{{ $project->adunit->name }}</td>
+									<td>{{ $project->share }}</td>
+									
 									<td>
-										<form method="POST" action="{{ route('deleteUnit', $adUnit->id) }}" accept-charset="UTF-8">
+										<form method="POST" action="" accept-charset="UTF-8">
 											<input type="hidden" name="_method" value="DELETE">
 											<input type="hidden" name="_token" value="{{ csrf_token() }}">
-											<a href="{{ route('editUnit', $adUnit->id) }}" name="btn_edit" class="btn btn-info"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+											<a href="" name="btn_edit" class="btn btn-info"><span class="glyphicon glyphicon-edit"></span> Edit</a>
 											<button type="submit" class="btn btn-danger" onclick="return confirm('Anda yakin menghapus data ?');"><span class="glyphicon glyphicon-trash"></span> Delete</button>
 										</form>
 										
@@ -42,7 +42,7 @@
 						</table>
 					</div>
 				</div>
-				{!! $adUnits->render() !!}
+				{!! $projects->render() !!}
 			</div>
 		</div>
 	</div>
