@@ -13,8 +13,8 @@
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>ID Aplikasi</th>
-							<th>Nama Aplikasi</th>
+							<th>Application ID</th>
+							<th>Name</th>
 							<th>Action</th>
 						</tr>
 					</thead>

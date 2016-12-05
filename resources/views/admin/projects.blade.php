@@ -5,7 +5,7 @@
 			<div class="col-md-10 col-lg-offset-1">
 				{{ Session::get('message') }}
 				<div class="panel panel-default">
-					<div class="panel-heading"><strong>Admin AdUnit</strong>
+					<div class="panel-heading"><strong>Admin Projects</strong>
 						<a href="" name="btn_add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Add</a><br><br>
 					</div>
 						<div class="panel-body">
@@ -13,8 +13,9 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Username </th>
-									<th>AdUnit Name</th>
+									<th>Name</th>
+									<th>Application</th>
+									<th>Unit</th>
 									<th>Share</th>
 								</tr>
 							</thead>
@@ -23,9 +24,10 @@
 								<tr>
 									<td>{{ ++$i }}</td>
 									<td>{{ $project->user->name }}</td>
+									<td>{{ $project->application->name }}</td>
 									<td>{{ $project->adunit->name }}</td>
 									<td>{{ $project->share }}</td>
-									
+							
 									<td>
 										<form method="POST" action="" accept-charset="UTF-8">
 											<input type="hidden" name="_method" value="DELETE">

@@ -16,7 +16,7 @@ class Project extends Model{
     	return $this->belongsTo('App\User','fk_user');
     }
 
-    public function project(){
+    public function application(){
     	return $this->belongsTo('App\Application','fk_app');
     }
 }

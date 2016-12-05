@@ -12,12 +12,12 @@ use View;
 class ProjectController extends Controller{
    public function index(Request $request){
         $projects = Project::orderBy('id','ASC')
-                    ->with(['user','adunit','project'])
-                    // ->paginate(5);
-                    ->get();
-        dd($projects->toArray());
-        // return view::make('admin.projects', compact('projects','user','adunit','application'))
-        //             ->with('i', ($request->input('page', 1) - 1) * 5);
+                    ->with(['user','adunit','application'])
+                    ->paginate(5);
+                    // ->get();
+        // dd($projects->toArray());
+        return view::make('admin.projects', compact('projects','user','adunit','application'))
+                    ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**

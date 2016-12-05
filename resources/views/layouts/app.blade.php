@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -56,7 +56,7 @@
                 @else
                 {{-- Left Side Of Navbar --}}
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('projects') }}">Home</a></li>
                     {{-- Authentication Admin login redirect menu admin --}}
                     @if(Auth::user()->isadmin == 1)
                     <li class="dropdown">
