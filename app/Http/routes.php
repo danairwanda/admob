@@ -33,7 +33,10 @@ Route::get('admin', ['middleware' => ['web','auth','admin'], function(){
 }]);
 
 Route::group(['middleware' => ['web','auth','admin']], function(){
-	Route::get('users','UserController@index');
+	Route::get('users', [
+		'as'	=> 'users',
+		'uses' 	=> 'UserController@index'
+	]);
 	Route::get('users/create', [
 	    'as' 	=> 'create', 
 	    'uses' 	=> 'UserController@create'
@@ -54,6 +57,10 @@ Route::group(['middleware' => ['web','auth','admin']], function(){
 		'as'	=> 	'delete',
 		'uses'	=>	'UserController@destroy'
 	]);	
+	Route::get('users/search', [
+		'as'	=> 'cariuser',
+		'uses'	=> 'UserController@search'	
+	]);
 	// Route Application
 	Route::get('applications', 'ApplicationController@index');
 	Route::get('applications/create',[
@@ -76,29 +83,38 @@ Route::group(['middleware' => ['web','auth','admin']], function(){
 		'as'	=>	'deleteApp',
 		'uses'	=>	'ApplicationController@destroy'
 	]);
-	// Route::resource('AdUnit','AdUnitController');
-	Route::get('AdUnits','AdUnitController@index');
-	Route::get('AdUnits/create', [ 
+	Route::get('applications/search', [
+		'as'	=>	'cariaplikasi',
+		'uses'	=>	'ApplicationController@search'
+	]);
+	// Route adunit
+	Route::get('adunit','AdUnitController@index');
+	Route::get('adunit/create', [ 
 		'as'	=>	'createUnit',
 		'uses'	=>	'AdUnitController@create'
 	]);
-	Route::post('AdUnits/store', [
+	Route::post('adunit/store', [
 		'as'	=>	'storeUnit',
 		'uses'	=>	'AdUnitController@store'
 	]);
-	Route::get('AdUnits/{id}/edit', [
+	Route::get('adunit/{id}/edit', [
 		'as'	=>	'editUnit',
 		'uses'	=>	'AdUnitController@edit'
 	]);
-	Route::post('AdUnits/{id}', [
+	Route::post('adunit/{id}', [
 		'as'	=>	'updateUnit',
 		'uses'	=>	'AdUnitController@update'
 	]);
-	Route::delete('AdUnits/{id}', [
+	Route::delete('adunit/{id}', [
 		'as'	=>	'deleteUnit',
 		'uses'	=>	'AdUnitController@destroy'
 	]);
+	Route::get('adunit/search', [
+		'as'	=>	'cariunit',
+		'uses'	=>	'AdUnitController@search'
+	]);
 	// Project Route..
 	Route::get('projects','ProjectController@index');
+	Route::get('cariproject','ProjectController@search');
 });
 

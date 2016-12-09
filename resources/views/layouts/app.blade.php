@@ -66,7 +66,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/users') }}">Users</a></li>
                             <li><a href="{{ url('/applications') }}">Applications</a></li>
-                            <li><a href="{{ url('/AdUnits') }}">Ads Unit</a></li>
+                            <li><a href="{{ url('/adunit') }}">Ads Unit</a></li>
                         </ul>
                     </li>
                     @endif

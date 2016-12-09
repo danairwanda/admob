@@ -19,7 +19,7 @@ class AdUnitController extends Controller{
         // dd($adUnits->toArray());
           // $adUnits = AdUnit::with('Application')->first();
           /* menampilkan view AdUnit di folder admin dengan membawa semua data yang diterjemahkan dalam compact dengan urutan nomor secara otomatis */
-        return view::make('admin.adUnits', compact('adUnits'))->with('i', ($request->input('page', 1) - 1) * 5);
+        return view::make('admin.adunit', compact('adUnits'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
    public function create(){
@@ -44,7 +44,7 @@ class AdUnitController extends Controller{
         $adUnit->fk_app     =  $request->fk_app;
         $adUnit->save();
         // redirect ke halaman home dengan membawa pesan
-        return redirect('AdUnits')->with('message','Data hasbeen saved!'); 
+        return redirect('adunit')->with('message','Data hasbeen saved!'); 
     }
 
     public function show($id) {
@@ -73,7 +73,7 @@ class AdUnitController extends Controller{
         $adUnit->fk_app     =  $request->fk_app;
         $adUnit->save();
         // redirect ke halaman home dengan membawa pesan
-        return redirect('AdUnits')->with('message','Data hasbeen update!');
+        return redirect('adunit')->with('message','Data hasbeen update!');
     }
 
     public function destroy($id){
@@ -82,6 +82,14 @@ class AdUnitController extends Controller{
         // delete data
         $adUnit->delete();
         // redirect home with message
-        return redirect('AdUnits')->with('message','Data hasbeen deleted!');
+        return redirect('adunit')->with('message','Data hasbeen deleted!');
+    }
+
+    public function Search(Request $request){
+        $cari   = $request->get('search');
+        $adUnits = AdUnit::where('name','LIKE','%'.$cari.'%')
+                    ->paginate(2);
+        return view::make('admin.adunit', compact('adUnits'))
+                ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 }

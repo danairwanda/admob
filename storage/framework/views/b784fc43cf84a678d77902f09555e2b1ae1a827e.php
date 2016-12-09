@@ -66,7 +66,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="<?php echo e(url('/users')); ?>">Users</a></li>
                             <li><a href="<?php echo e(url('/applications')); ?>">Applications</a></li>
-                            <li><a href="<?php echo e(url('/AdUnits')); ?>">Ads Unit</a></li>
+                            <li><a href="<?php echo e(url('/adunit')); ?>">Ads Unit</a></li>
                         </ul>
                     </li>
                     <?php endif; ?>

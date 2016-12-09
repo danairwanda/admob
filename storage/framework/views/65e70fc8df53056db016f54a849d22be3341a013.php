@@ -6,7 +6,18 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading"><strong>Admin Projects</strong>
-						<a href="" name="btn_add" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span> Add</a><br><br>
+						<?php echo Form::open(['method' => 'GET', 'url' => 'cariproject', 'role' => 'search']); ?>
+
+						<div class="input-group custom-search-form col-md-4 col-lg-offset-8">
+							<input type="text" class="form-control" name="search" placeholder="Search...">
+							<span class="input-group-btn">
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-default"><i class="fa fa-search"></i>Cari</button>
+								</span>
+							</span>
+						<?php echo Form::close(); ?>
+
+					</div>
 					</div>
 						<div class="panel-body">
 						<table class="table table-striped table-hover">
@@ -35,8 +46,6 @@
 											<a href="" name="btn_edit" class="btn btn-info"><span class="glyphicon glyphicon-edit"></span> Edit</a>
 											<button type="submit" class="btn btn-danger" onclick="return confirm('Anda yakin menghapus data ?');"><span class="glyphicon glyphicon-trash"></span> Delete</button>
 										</form>
-										
-										
 									</td>
 								</tr>
 							<?php endforeach; ?>

@@ -103,4 +103,12 @@ class UserController extends Controller{
         // redirect ke halaman home admin beserta pesan berhasil
         return redirect('users')->with('message','password has been updated!');
     }
+
+    public function search(Request $request){
+        $cari   = $request->get('search');
+        $users  = User::where('name','LIKE', '%'.$cari.'%')
+                    ->paginate(2); 
+        return view::make('admin.user_index', compact('users'))
+                ->with('i' , ($request->input('page', 1) - 1) * 2);
+    }
 }

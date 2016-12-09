@@ -71,4 +71,11 @@ class ApplicationController extends Controller{
         // redirect to home page with message
         return redirect('applications')->with('message','data hasbeen deleted!');
     }
+    public function search(Request $request){
+        $cari   = $request->get('search');
+        $apps   = Application::where('name','LIKE', '%'.$cari.'%')
+                    ->paginate(2);
+        return view::make('admin.apps', compact('apps'))
+                ->with('i', ($request->input('page', 1) - 1) * 5);
+    }
 }
