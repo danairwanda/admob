@@ -10,7 +10,9 @@
         "pulkitjalan/google-apiclient" : "3.*",
         "nikolajlovenhardt/laravel-google-ads" : "dev-master",
         "googleads/googleads-php-lib": "^14.0",
-        "laravelcollective/html" : "~5.0"
+        "laravelcollective/html" : "~5.0",
+        "maatwebsite/excel" : "^2.1",
+        "intervention/image": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

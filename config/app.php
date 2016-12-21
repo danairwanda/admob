@@ -148,7 +148,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        
+        // import excel to mysql
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -209,7 +210,7 @@ return [
         'Google' => PulkitJalan\Google\Facades\Google::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
-
+        'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

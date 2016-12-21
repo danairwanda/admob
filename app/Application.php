@@ -9,7 +9,7 @@ class Application extends Model{
     protected $fillable = ['app_id','name'];
 
     public function adunit(){
-		return $this->hasMany('App\AdUnit');
+		return $this->hasMany('App\AdUnit','fk_app');
 	}
 
 	public function project(){

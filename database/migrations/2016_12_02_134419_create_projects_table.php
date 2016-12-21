@@ -14,14 +14,14 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('fk_adunit')->unsigned();
-            $table->foreign('fk_adunit')
-                   ->references('id')
-                   ->on('ad_units');
             $table->integer('fk_user')->unsigned();
             $table->foreign('fk_user')
                   ->references('id')
                   ->on('users');
+            $table->integer('fk_adunit')->unsigned();
+            $table->foreign('fk_adunit')
+                   ->references('id')
+                   ->on('ad_units');
             $table->string('share');
             $table->timestamps();
         });

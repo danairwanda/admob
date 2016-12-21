@@ -12,13 +12,13 @@ class ApplicationController extends Controller{
         // menampilkan seluruh data dengan urutan z-a beserta paginasi
         $apps = Application::orderBy('id','ASC')->paginate(5);
         // return view admin apps 
-        return view::make('admin.apps', compact('apps'))
+        return view::make('admin.applications.apps', compact('apps'))
             ->with('i', ($request->input('page', 1) - 1) * 5); 
     }
 
     public function create(){
         // memanggil halaman create aplikasi
-        return view::make('admin.create_apps');
+        return view::make('admin.applications.create_apps');
     }
 
     public function store(Request $request){
@@ -46,7 +46,7 @@ class ApplicationController extends Controller{
         // ini untuk menemukan id
         $app = Application::findOrFail($id);
         // memanggil halaman edit aplikasi
-        return view::make('admin.edit_apps', compact('app'));
+        return view::make('admin.applications.edit_apps', compact('app'));
     }
 
     public function update(Request $request, $id) {
@@ -75,7 +75,7 @@ class ApplicationController extends Controller{
         $cari   = $request->get('search');
         $apps   = Application::where('name','LIKE', '%'.$cari.'%')
                     ->paginate(2);
-        return view::make('admin.apps', compact('apps'))
+        return view::make('admin.applications.apps', compact('apps'))
                 ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 }

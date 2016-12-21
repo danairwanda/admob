@@ -13,15 +13,16 @@ use View;
 class UserController extends Controller{
     public function index(Request $request){
         // menampilkan seluruh data dengan urutan z-a beserta paginasi
-        $users = User::orderBy('id','ASC')->paginate(5);
+        $users = User::orderBy('id','ASC')
+                    ->get();
         // return view user index
-        return view::make('admin.user_index',compact('users'))
+        return view::make('admin.users.user_index',compact('users'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
     
     public function create(){
         // memanggil halaman create_user 
-        return view::make('admin.create_user');
+        return view::make('admin.users.create_user');
     }
 
     public function store(Request $request){
@@ -51,7 +52,7 @@ class UserController extends Controller{
         //  ini buat menemukan id 
         $user = User::findOrFail($id);
         // memanggil halaman edit_user
-        return view::make('admin.edit_user', compact('user'));
+        return view::make('admin.users.edit_user', compact('user'));
     }
 
     public function update(Request $request, $id){
@@ -87,7 +88,7 @@ class UserController extends Controller{
         // temukan password id
         $user = User::findOrFail($id);
         // memanggil halaman edit password
-        return view::make('admin.password', compact('user'));
+        return view::make('admin.users.password', compact('user'));
     }
 
     public function updatePassword(Request $request, $id){
@@ -108,7 +109,11 @@ class UserController extends Controller{
         $cari   = $request->get('search');
         $users  = User::where('name','LIKE', '%'.$cari.'%')
                     ->paginate(2); 
-        return view::make('admin.user_index', compact('users'))
+        return view::make('admin.users.user_index', compact('users'))
                 ->with('i' , ($request->input('page', 1) - 1) * 2);
+    }
+
+    public function image(){
+        return view('admin.users.uploadImage');
     }
 }

@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit4d7e04086e968da958f851e46863388d
 {
     public static $files = array (
-        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
@@ -37,6 +37,10 @@ class ComposerStaticInit4d7e04086e968da958f851e46863388d
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+        ),
+        'T' => 
+        array (
+            'TijsVerkoyen\\CssToInlineStyles\\' => 31,
         ),
         'S' => 
         array (
@@ -78,6 +82,7 @@ class ComposerStaticInit4d7e04086e968da958f851e46863388d
         ),
         'I' => 
         array (
+            'Intervention\\Image\\' => 19,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -127,6 +132,10 @@ class ComposerStaticInit4d7e04086e968da958f851e46863388d
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'TijsVerkoyen\\CssToInlineStyles\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -232,6 +241,10 @@ class ComposerStaticInit4d7e04086e968da958f851e46863388d
         array (
             0 => __DIR__ . '/..' . '/nikolajlovenhardt/laravel-google-ads/src/LaravelGoogleAds',
         ),
+        'Intervention\\Image\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -293,12 +306,20 @@ class ComposerStaticInit4d7e04086e968da958f851e46863388d
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
+            ),
         ),
         'M' => 
         array (
             'Mockery' => 
             array (
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
+            ),
+            'Maatwebsite\\Excel\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/maatwebsite/excel/src',
             ),
         ),
         'J' => 
@@ -344,11 +365,16 @@ class ComposerStaticInit4d7e04086e968da958f851e46863388d
         'AdWordsSoapClient' => __DIR__ . '/..' . '/googleads/googleads-php-lib/src/Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php',
         'AdWordsSoapClientFactory' => __DIR__ . '/..' . '/googleads/googleads-php-lib/src/Google/Api/Ads/AdWords/Lib/AdWordsSoapClientFactory.php',
         'AdWordsUser' => __DIR__ . '/..' . '/googleads/googleads-php-lib/src/Google/Api/Ads/AdWords/Lib/AdWordsUser.php',
+        'AddDateToProjectsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_16_070750_add_date_to_projects_table.php',
         'AddFkAppToProjectsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_02_225728_add_fk_app_to_projects_table.php',
+        'AddFkReportToProjectsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_16_084247_add_fk_report_to_projects_table.php',
+        'AddImageToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_16_025330_add_image_to_users_table.php',
+        'AddNameAdunitAndAppsToProjectsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_17_014226_add_name_adunit_and_apps_to_projects_table.php',
         'CreateAdUnitsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_01_071355_create_ad_units_table.php',
         'CreateApplicationsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_30_121706_create_applications_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateProjectsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_02_134419_create_projects_table.php',
+        'CreateReportsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_11_050955_create_reports_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'DfpSoapClient' => __DIR__ . '/..' . '/googleads/googleads-php-lib/src/Google/Api/Ads/Dfp/Lib/DfpSoapClient.php',
@@ -452,6 +478,34 @@ class ComposerStaticInit4d7e04086e968da958f851e46863388d
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+        'Maatwebsite\\Excel\\Classes\\Cache' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/Cache.php',
+        'Maatwebsite\\Excel\\Classes\\FormatIdentifier' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/FormatIdentifier.php',
+        'Maatwebsite\\Excel\\Classes\\LaravelExcelWorksheet' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/LaravelExcelWorksheet.php',
+        'Maatwebsite\\Excel\\Classes\\PHPExcel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/PHPExcel.php',
+        'Maatwebsite\\Excel\\Collections\\CellCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/CellCollection.php',
+        'Maatwebsite\\Excel\\Collections\\ExcelCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/ExcelCollection.php',
+        'Maatwebsite\\Excel\\Collections\\RowCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/RowCollection.php',
+        'Maatwebsite\\Excel\\Collections\\SheetCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/SheetCollection.php',
+        'Maatwebsite\\Excel\\Excel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Excel.php',
+        'Maatwebsite\\Excel\\ExcelServiceProvider' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/ExcelServiceProvider.php',
+        'Maatwebsite\\Excel\\Exceptions\\LaravelExcelException' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Exceptions/LaravelExcelException.php',
+        'Maatwebsite\\Excel\\Facades\\Excel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Facades/Excel.php',
+        'Maatwebsite\\Excel\\Files\\ExcelFile' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ExcelFile.php',
+        'Maatwebsite\\Excel\\Files\\ExportHandler' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ExportHandler.php',
+        'Maatwebsite\\Excel\\Files\\File' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/File.php',
+        'Maatwebsite\\Excel\\Files\\ImportHandler' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ImportHandler.php',
+        'Maatwebsite\\Excel\\Files\\NewExcelFile' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/NewExcelFile.php',
+        'Maatwebsite\\Excel\\Filters\\ChunkReadFilter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Filters/ChunkReadFilter.php',
+        'Maatwebsite\\Excel\\Parsers\\CssParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/CssParser.php',
+        'Maatwebsite\\Excel\\Parsers\\ExcelParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/ExcelParser.php',
+        'Maatwebsite\\Excel\\Parsers\\ViewParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/ViewParser.php',
+        'Maatwebsite\\Excel\\Readers\\Batch' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/Batch.php',
+        'Maatwebsite\\Excel\\Readers\\ChunkedReadJob' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/ChunkedReadJob.php',
+        'Maatwebsite\\Excel\\Readers\\ConfigReader' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/ConfigReader.php',
+        'Maatwebsite\\Excel\\Readers\\Html' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/HtmlReader.php',
+        'Maatwebsite\\Excel\\Readers\\LaravelExcelReader' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/LaravelExcelReader.php',
+        'Maatwebsite\\Excel\\Writers\\CellWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/CellWriter.php',
+        'Maatwebsite\\Excel\\Writers\\LaravelExcelWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/LaravelExcelWriter.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',

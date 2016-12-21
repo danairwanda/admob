@@ -24,8 +24,9 @@ Route::group(['middleware' => ['web','auth']], function(){
 			/* | untuk user login : user biasa| */
 			return view('users.user_home');
 		}
-	});
-	
+	});	
+	// Reports Route..
+	Route::get('reports', 'ReportController@index');
 });
 /* | url /admin hanya bisa diakses oleh user yang sudah login sebagai admin | */
 Route::get('admin', ['middleware' => ['web','auth','admin'], function(){
@@ -60,6 +61,10 @@ Route::group(['middleware' => ['web','auth','admin']], function(){
 	Route::get('users/search', [
 		'as'	=> 'cariuser',
 		'uses'	=> 'UserController@search'	
+	]);
+	Route::get('user/image', [
+		'as'	=>	'image',
+		'uses'	=>	'UserController@image'
 	]);
 	// Route Application
 	Route::get('applications', 'ApplicationController@index');
@@ -116,5 +121,40 @@ Route::group(['middleware' => ['web','auth','admin']], function(){
 	// Project Route..
 	Route::get('projects','ProjectController@index');
 	Route::get('cariproject','ProjectController@search');
+	Route::get('project/create', [
+		'as'	=>	'createProj',
+		'uses'	=>	'ProjectController@create'
+		]);
+	Route::post('projects/store', [
+		'as'	=>	'storeProj',
+		'uses'	=>	'ProjectController@store'
+		]);
+	Route::get('project/{id}/edit',[
+		'as'	=>	'editProj',
+		'uses'	=> 'ProjectController@edit'
+		]);
+	Route::post('projects/{id}',[
+		'as'	=>	'updateProj',
+		'uses'	=>	'ProjectController@update'
+		]);
+	Route::delete('projects/{id}', [
+		'as'	=> 'deleteProj',
+		'uses'	=>	'ProjectController@destroy'
+		]);
+	Route::get('/unitDropdown','ProjectController@unitDropdown');
+	// Import Excel Route..
+	Route::post('importExcel', [
+		'as'	=>	'upload',
+		'uses'	=>	'ReportController@importExcel'
+	]);
+	Route::get('reports/importfile', [
+		'as'	=>	'importfile',
+		'uses'	=>	'ReportController@createImport'
+	]);	
 });
+
+// excel to mysql Route..
+	// Route::get('importExport','ReportController@importExport');
+	// Route::get('downloadExcel/{type}', 'ReportController@downloadExcel');
+	// Route::post('importExcel','ReportController@importExcel');
 

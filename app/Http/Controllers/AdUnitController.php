@@ -19,7 +19,7 @@ class AdUnitController extends Controller{
         // dd($adUnits->toArray());
           // $adUnits = AdUnit::with('Application')->first();
           /* menampilkan view AdUnit di folder admin dengan membawa semua data yang diterjemahkan dalam compact dengan urutan nomor secara otomatis */
-        return view::make('admin.adunit', compact('adUnits'))->with('i', ($request->input('page', 1) - 1) * 5);
+        return view::make('admin.adunits.adunit', compact('adUnits'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
    public function create(){
@@ -27,7 +27,7 @@ class AdUnitController extends Controller{
         $adUnits = AdUnit::all();
         $all     = Application::all();
         // memanggil halaman create unit
-        return view::make('admin.create_unit', compact('adUnits','all'));  
+        return view::make('admin.adunits.create_unit', compact('adUnits','all'));  
     }
 
    public function store(Request $request){
@@ -56,7 +56,7 @@ class AdUnitController extends Controller{
         $adUnits = AdUnit::findOrFail($id);
         $all     = Application::all();
         // mengarahkan halaman adunit edit dengan membawa data
-        return view::make('admin.edit_unit', compact('adUnits','all'));
+        return view::make('admin.adunits.edit_unit', compact('adUnits','all'));
     }
 
     public function update(Request $request, $id){
@@ -89,7 +89,7 @@ class AdUnitController extends Controller{
         $cari   = $request->get('search');
         $adUnits = AdUnit::where('name','LIKE','%'.$cari.'%')
                     ->paginate(2);
-        return view::make('admin.adunit', compact('adUnits'))
+        return view::make('admin.adunits.adunit', compact('adUnits'))
                 ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 }

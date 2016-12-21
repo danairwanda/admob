@@ -22,7 +22,7 @@
 								<input type="text" class="form-control" name="search" placeholder="Search...">
 								<span class="input-group-btn">
 									<span class="input-group-btn">
-										<button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Cari</button>
+										<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 									</span>
 								</span>
 							</div>
